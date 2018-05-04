@@ -54,7 +54,7 @@ image_tensor, orig_img_tensor, annotation_tensor = tf.cond(is_training_placehold
 feed_dict_to_use = {is_training_placeholder: True}
 
 upsample_factor = 16
-number_of_classes = 21
+number_of_classes = 59
 # 训练日志、ckpt输出文件夹
 log_folder = os.path.join(FLAGS.output_dir, 'train')
 # 获取vgg16预训练模型
@@ -300,7 +300,7 @@ with sess:
 
             summary_string_writer.add_summary(summary_string, i)
 
-            if gs % 500 == 0 or gs % 500 == 1:
+            if gs % 1000 == 0 or gs % 1000 == 1:
                 save_path = saver.save(sess, os.path.join(log_folder, "model.ckpt"), global_step=gs)
                 logging.debug("Model saved in file: %s" % save_path)
 

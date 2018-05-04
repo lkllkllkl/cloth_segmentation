@@ -15,7 +15,7 @@ TRAIN_FILE = 'fcn_train.record'
 VALIDATION_FILE = 'fcn_val.record'
 
 # 图片信息
-NUM_CLASSES = 21
+NUM_CLASSES = 59
 
 
 def read_and_decode(filename_queue):
